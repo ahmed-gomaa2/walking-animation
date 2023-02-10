@@ -6,6 +6,7 @@
 
 body {
     overflow-x: hidden;
+    padding-top: 50px;
 }
 
 div {
@@ -28,9 +29,9 @@ div {
     background-color: black;
     color: white;
     position: absolute;
-    top: 0;
-    left:100%;
-    transform: rotateY(180deg);
+    top: -40px;
+    left:50%;
+    transform: translateX(-50%) rotateY(180deg);
     animation: div1-stoped 0s forwards 5s;
 }
 
