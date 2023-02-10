@@ -15,59 +15,76 @@ div {
 }
 
 .div1 {
-    animation: walk-right 5s steps(6) forwards;
+    animation: walk-right 5s steps(6) forwards, right 5s forwards;
 }
 
 .div2 {
     transform: rotateY(0);
-    animation: walk-left 5s steps(6) forwards 5s;
+    animation: walk-left 3s steps(6) forwards 5s, left 5s forwards 5s;
     left: calc(100% - 85px);
 }
 
 .div3 {
-    animation: walk-right 5s steps(6) forwards 10s;
+    animation: walk-right 5s steps(6) forwards 10s, right 5s forwards 10s;
 }
 
 .div4 {
     transform: rotateY(0);
-    animation: walk-left 5s steps(6) forwards 15s;
+    animation: walk-left 5s steps(6) forwards 15s, left 5s forwards 15s;
     left: calc(100% - 85px);
 }
 
 .div5 {
-    animation: walk-right 5s steps(6) forwards 20s;
+    animation: walk-right 5s steps(6) forwards 20s, right 5s forwards 20s;
 
 }
 
 .div6 {
     transform: rotateY(0);
-    animation: walk-left 5s steps(6) forwards 25s;
+    animation: walk-left 5s steps(6) forwards 25s, left 5s forwards 25s ;
     left: calc(100% - 85px);
 }
-@keyframes walk-left {
+@keyframes walk-right {
     0% {
         background-color: 0px;
-        left: calc(100% - 85px);
     }
     90% {
         background-position: -500px;
     }
     100% {
         background-position: 0;
-        left: 0;
     }
 }
 
-@keyframes walk-right {
+@keyframes walk-left {
     0% {
         background-position: 0px;
-        left: 0;
     }
     90% {
         background-position: -500px;
     }
     100% {
         background-position: 0px;
+    }
+}
+
+
+@keyframes right {
+    from {
+        left: 0;
+    }
+
+    to {
         left: calc(100% - 85px);
+    }
+}
+
+@keyframes left {
+    from {
+        left: calc(100% - 85px);
+    }
+
+    to {
+        left: 0;
     }
 }
