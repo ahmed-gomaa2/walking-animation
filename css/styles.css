@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 div {
     width: 84px;
     height: 126px;
@@ -15,34 +19,124 @@ div {
 }
 
 .div1 {
-    animation: walk-right 5s steps(6) forwards, right 5s forwards;
+    animation: walk-right 5s steps(6) forwards, right 5s linear forwards;
+}
+
+.div1::after {
+    content: 'RUNNING!';
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    left:100%;
+    transform: rotateY(180deg);
+    animation: div1-stoped 0s forwards 5s;
+}
+
+@keyframes div1-stoped {
+    from {
+        content: 'RUNNING!';
+    }
+    to {
+        content: 'DONE!';
+    }
+}
+
+@keyframes started {
+    from {
+        content: 'WAITING!';
+    }
+    to{
+        content: 'RUNNING!';
+    }
 }
 
 .div2 {
     transform: rotateY(0);
-    animation: walk-left 3s steps(6) forwards 5s, left 5s forwards 5s;
+    animation: walk-left 5s steps(6) forwards 5s, left 5s linear forwards 5s;
     left: calc(100% - 85px);
 }
 
+.div2::after {
+    content: 'WAITING!';
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: started 0s forwards 5s, div1-stoped 0s forwards 10s;
+}
+
 .div3 {
-    animation: walk-right 5s steps(6) forwards 10s, right 5s forwards 10s;
+    animation: walk-right 5s steps(6) forwards 10s, right 5s linear forwards 10s;
+}
+
+.div3::after {
+    content: 'WAITING!';
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotateY(180deg);
+    animation: started 0s forwards 10s, div1-stoped 0s forwards 15s;
 }
 
 .div4 {
     transform: rotateY(0);
-    animation: walk-left 5s steps(6) forwards 15s, left 5s forwards 15s;
+    animation: walk-left 5s steps(6) forwards 15s, left 5s linear forwards 15s;
     left: calc(100% - 85px);
 }
 
-.div5 {
-    animation: walk-right 5s steps(6) forwards 20s, right 5s forwards 20s;
+.div4::after {
+    content: 'WAITING!';
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: started 0s forwards 15s, div1-stoped 0s forwards 20s;
+}
 
+.div5 {
+    animation: walk-right 5s steps(6) forwards 20s, right 5s linear forwards 20s;
+
+}
+
+.div5::after {
+    content: 'WAITING!';
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotateY(180deg);
+    animation: started 0s forwards 20s, div1-stoped 0s forwards 25s;
 }
 
 .div6 {
     transform: rotateY(0);
-    animation: walk-left 5s steps(6) forwards 25s, left 5s forwards 25s ;
+    animation: walk-left 5s steps(6) forwards 25s, left 5s linear forwards 25s ;
     left: calc(100% - 85px);
+}
+
+.div6::after {
+    content: 'WAITING!';
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: started 0s forwards 25s, div1-stoped 0s forwards 30s;
 }
 @keyframes walk-right {
     0% {
